@@ -1,0 +1,9 @@
+objects = test.o incre_perm.o
+
+test : $(objects)
+	$(CXX) -o test $(objects)
+
+incre_perm.o : incre_perm.h
+
+clean:
+	rm test $(objects)

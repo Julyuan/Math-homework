@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/benchmark/benchmark.h
+stdint.h
+-
+algorithm
+-
+cassert
+-
+cstddef
+-
+iosfwd
+-
+map
+-
+set
+-
+string
+-
+utility
+-
+vector
+-
+initializer_list
+-
+type_traits
+-
+utility
+-
+intrin.h
+-
+
+/Users/jinly/Project/benchmark/test/map_test.cc
+benchmark/benchmark.h
+/Users/jinly/Project/benchmark/test/benchmark/benchmark.h
+cstdlib
+-
+map
+-
+
