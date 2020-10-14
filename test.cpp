@@ -17,8 +17,8 @@ int test2(){
 }
 
 int test3(){
-    int arr[] = {1, 2, 3, 4, 5};
-    Incre_perm(arr, 5);
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    Incre_perm(arr, 12);
     return 0;
 }
 
@@ -30,7 +30,7 @@ int test4(){
 
 int main(){
     // test2();
-    test4();
+    test3();
 
     return 0;
 }

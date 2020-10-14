@@ -3,9 +3,15 @@
 #define maxn 100
 
 int tmp[maxn];
+int loc[maxn];
 
 void Incre_perm_from_inter(int arr[], int n, IntermediateNumber& num){
+    // std::cout<<"modify_pos = "<<num.modify_pos<<std::endl;
     for(int i = n - 2; i >= 0; i--){
+        if(num.modify_pos < i){
+            tmp[loc[arr[i+1]]] = arr[i+1];
+            continue;
+        }
         int pos = 0;
         int cnt = 0;
         int shift = num.GetNum(i);
@@ -20,6 +26,7 @@ void Incre_perm_from_inter(int arr[], int n, IntermediateNumber& num){
             }
         }
         tmp[pos] = arr[i + 1];
+        loc[arr[i+1]] = pos;
     }
     for(int i=0;i<n;i++){
         if(tmp[i]==-1){

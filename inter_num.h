@@ -11,6 +11,7 @@ private:
     std::vector<int> _num;
     std::vector<int> _base;
 public:
+    int modify_pos;        // 代表上一次最后改变的位置
     IntermediateNumber() = default;
     IntermediateNumber(int len);
 
@@ -71,6 +72,7 @@ inline void IntermediateNumber::SetBase(int start, int end, int step){
 
 inline IntermediateNumber::IntermediateNumber(int len)
 {
+    modify_pos = len;
     for(int i=0;i<len;i++){
         _num.push_back(0);
         _base.push_back(i+2);
@@ -97,6 +99,7 @@ inline bool IntermediateNumber::Increment(){
         if(_num[i] >= _base[i]){
             _num[i] -= _base[i];
         }else{
+            this->modify_pos = i;
             break;
         }
     }
