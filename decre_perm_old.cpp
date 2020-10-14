@@ -3,20 +3,12 @@
 #define maxn 100
 
 int tmp1[maxn];
-int loc1[maxn];
 
 void Decre_perm_from_inter(int arr[], int n, IntermediateNumber& num){
-    int leftmost = n;
     for(int i = n - 2; i >= 0; i--){
-        int cur = (n - 2 - i);
-        if(num.modify_pos < cur && leftmost > loc1[arr[i+1]]){
-            // std::cout<<"127 "<<arr[i+1]<<std::endl;
-            tmp1[loc1[arr[i+1]]] = arr[i+1];
-            continue;
-        }
         int pos = 0;
         int cnt = 0;
-        int shift = num.GetNum(cur);
+        int shift = num.GetNum(n - 2 - i);
         for(int j=n-1;j>=0;j--){
             if(tmp1[j] == -1){
                 if(cnt == shift){
@@ -27,11 +19,7 @@ void Decre_perm_from_inter(int arr[], int n, IntermediateNumber& num){
                 }
             }
         }
-        if(pos < leftmost){
-            leftmost = pos;
-        }
         tmp1[pos] = arr[i + 1];
-        loc1[arr[i+1]] = pos;
     }
     for(int i=0;i<n;i++){
         if(tmp1[i]==-1){
