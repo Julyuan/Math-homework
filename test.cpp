@@ -30,7 +30,7 @@ int test4(){
 
 int main(){
     // test2();
-    test3();
+    test4();
 
     return 0;
 }
